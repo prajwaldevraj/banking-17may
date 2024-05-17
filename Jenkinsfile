@@ -47,11 +47,13 @@ stage('Push the Image') {
     steps {
       dir('scripts') {
         sh 'sudo chmod 600 insurnace-14may.pem'
+        withCredentials([aws(accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'jenkinsIAMuser', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
         sh 'terraform init'
         sh 'terraform validate'
         sh 'terraform apply --auto-approve'
-                     }
-           }
+                      }
+               }
+          }
       }
-   }
+  }
 }
