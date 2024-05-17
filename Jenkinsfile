@@ -27,7 +27,7 @@ stage('Publish Test Report') {
 stage('Create Image using the package') {
    steps {
 echo 'Creating a docker image from the package'
-     sh 'docker build -t prajwaldevraj/banking:1.0 .'
+     sh 'docker build -t prajwal1602/banking:1.0 .'
          }
      }
 stage('Docker Login') {
