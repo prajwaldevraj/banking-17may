@@ -43,5 +43,15 @@ stage('Push the Image') {
       sh 'docker push prajwal1602/banking:1.0'
                         }
          }
-    }
+  stage('Create Infrastructure using terraform') {
+    steps {
+      dir('scripts') {
+        sh 'sudo chmod 600 insurnace-14may.pem'
+        sh 'terraform init'
+        sh 'terraform validate'
+        sh 'terraform apply --auto-approve'
+                     }
+           }
+      }
+   }
 }
