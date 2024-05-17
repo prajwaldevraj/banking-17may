@@ -13,4 +13,4 @@
     command: sudo systemctl start docker
     
   - name: Run the Bank Application
-    command: docker run -itd -p 8085:8081 prajwal1602/banking-:1.0
+    command: docker run -dt -p 8085:8081 prajwal1602/banking-:1.0
