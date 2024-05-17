@@ -4,7 +4,7 @@
   connection: ssh
   tasks:
   - name: updating yum 
-    command: sudo apt update
+    command: sudo yum update
 
   - name: Install Docker
     command: sudo apt install docker -y
