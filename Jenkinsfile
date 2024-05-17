@@ -33,7 +33,7 @@ echo 'Creating a docker image from the package'
 stage('Docker Login') {
   steps {
     echo 'Login to Docker hub to pushthe images'
-      withCredentials([usernamePassword(credentialsId: 'Dockerlogincreds', passwordVariable: 'dockerhubpass', usernameVariable: 'dockerhublogin')]) {
+      withCredentials([usernamePassword(credentialsId: 'Dockerlogin-user', passwordVariable: 'dockerhubpass', usernameVariable: 'dockerhublogin')]) {
       sh 'docker login -u ${dockerhublogin} -p ${dockerhubpass}'
                        }
             }
