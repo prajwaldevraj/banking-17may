@@ -9,7 +9,7 @@ stages {
    stage('Checkout') {
     steps {
       echo 'Checkout the source code from Github'
-        git https://github.com/prajwaldevraj/banking-17may.git
+        git 'https://github.com/prajwaldevraj/banking-17may.git'
           }
     }
 stage('Package') {
